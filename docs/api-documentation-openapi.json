@@ -4357,10 +4357,13 @@
                                                     "credentialId": "cred-123",
                                                     "credentialTypeDisplayName": "Mock Verifiable Credential (SD-JWT)",
                                                     "credentialTypeLogo": "https://mosip.github.io/inji-config/logos/mosipid-logo.png",
-                                                    "format": "ldp_vc"
+                                                    "type": ["IDCredential"],
+                                                    "claims": {
+                                                        "birthdate": "1990-01-01"
+                                                    }
                                                 }
                                             ],
-                                            "missingClaims": ["$.type"]
+                                            "missingClaims": []
                                         }
                                     }
                                 }
@@ -4433,8 +4436,6 @@
                         "SessionAuth": []
                     }
                 ]
-            }
-        },
             }
         },
         "/wallets/{walletId}/trusted-verifiers": {
@@ -5277,7 +5278,7 @@
                 "properties": {
                     "status": { "type": "string", "description": "Status of the rejection request (for example success)" },
                     "message": { "type": "string", "description": "Human readable message describing the result" },
-                    "redirectUri": { "type": ["string"], "description": "Redirect URI provided to the verifier" }
+                    "redirectUri": { "type": "string", "description": "Redirect URI provided to the verifier" }
                 },
                 "required": [ "status", "message", "redirectUri" ]
             }
